@@ -3,10 +3,12 @@
 
 ## General formatting
 * Use tabs with a 4 space indent.
+* Both tags and attributes (incl. values) should be written in lowercase.
+* Hyphens are used as separators.
 * Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
 * Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of `<div>` or `<p>`.
 * Every form input that has text attached should utilize a `<label>` tag. Especially radio or checkbox elements.
-* Even though quotes around attributes is optional, always put quotes around attributes for readability.
+* Even though quotes around attributes is optional, always put (double) quotes around attributes for readability.
 * Avoid writing closing tag comments, like `<!-- /.element -->`. This just adds to page load time. Plus, most editors have indentation * guides and open-close tag highlighting.
 * Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
 * Don’t set tabindex manually—rely on the browser to set the order.
@@ -25,6 +27,15 @@ We often use certain HTML elements and CSS properties that require the use of th
 ...
 </html>
 ```
+
+## Character encoding
+Always use UTF-8 encoding.
+
+```html
+<meta charset="utf-8">
+```
+
+Please note that your IDE should save files in UTF-8 encoding as well.
 
 ## Boolean attributes
 Many attributes don’t require a value to be set, like disabled or checked, so don’t set them.
@@ -82,3 +93,8 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribut
   </tbody>
 </table>
 ```
+
+## Misc
+* Make sure you indent your HTML tags accordingly.
+* Inline styles are not allowed. Use stylesheets instead.
+* Always provide a favicon.ico file (to avoid 404 errors)
