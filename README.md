@@ -27,6 +27,14 @@ We often use certain HTML elements and CSS properties that require the use of th
 ...
 </html>
 ```
+## Language attribute
+From the HTML5 spec:
+>Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
+```html
+<html lang="en-us">
+  <!-- ... -->
+</html>
+```
 
 ## Character encoding
 Always use UTF-8 encoding.
@@ -36,6 +44,22 @@ Always use UTF-8 encoding.
 ```
 
 Please note that your IDE should save files in UTF-8 encoding as well.
+
+## CSS and JavaScript includes
+Per HTML5 spec, typically there is no need to specify a `type` when including CSS and JavaScript files as `text/css` and `text/javascript` are their respective defaults.
+
+```html
+<!-- External CSS -->
+<link rel="stylesheet" href="code-guide.css">
+
+<!-- In-document CSS -->
+<style>
+  /* ... */
+</style>
+
+<!-- JavaScript -->
+<script src="code-guide.js"></script>
+```
 
 ## Boolean attributes
 Many attributes don’t require a value to be set, like disabled or checked, so don’t set them.
