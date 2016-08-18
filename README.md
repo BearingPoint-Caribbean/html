@@ -1,10 +1,17 @@
 # BearingPoint HTML Style Guide
 *Best practices and guidelines for writing HTML with approachable formatting, syntax, and more.*
 
+## General style rules
+* Use valid HTML where possible. Use tools such as the [W3C HTML validator](https://validator.w3.org/nu/) to test.
+* Use HTML according to its purpose. This is important for accessibility, reuse, and code efficiency reasons.
+* Separate structure from presentation from behavior. trictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.
+* Do not use entity references. There is no need to use entity references like `&mdash;`, `&rdquo;`, or `&#x263a;`, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
+
 ## General formatting
 * Use tabs with a 4 space indent.
-* Both tags and attributes (incl. values) should be written in lowercase.
+* All code has to be lowercase: This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).
 * Hyphens are used as separators.
+* Remove trailing white spaces, they are unnecessary and can complicate diffs.
 * Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
 * Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of `<div>` or `<p>`.
 * Every form input that has text attached should utilize a `<label>` tag. Especially radio or checkbox elements.
@@ -37,7 +44,7 @@ From the HTML5 spec:
 ```
 
 ## Character encoding
-Always use UTF-8 encoding.
+Always use UTF-8 encoding (no BOM). Do not specify the encoding of style sheets as these assume UTF-8.
 
 ```html
 <meta charset="utf-8">
@@ -60,6 +67,36 @@ Per HTML5 spec, typically there is no need to specify a `type` when including CS
 <!-- JavaScript -->
 <script src="code-guide.js"></script>
 ```
+
+## Comments 
+Short comments should be written on one line, with a space after `<!--` and a space before `-->`:
+
+```html
+<!-- This is a comment -->
+```
+
+Long comments, spanning many lines, should be written with `<!--` and `-->` on separate lines:
+
+```html
+<!-- 
+  This is a long comment example. This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example. This is a long comment example.
+-->
+```
+
+### Todos
+Highlight todos by using the keyword `TODO` only, not other common formats like `@@`. Optionally you can append a contact (username or workingcopy handle) in parentheses as with the format `TODO(contact)`.
+
+```html
+{# TODO(john.doe): revisit centering #}
+<center>Test</center>
+<!-- TODO: remove optional tags -->
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+</ul>
+```
+
 
 ## Boolean attributes
 Many attributes don’t require a value to be set, like disabled or checked, so don’t set them.
