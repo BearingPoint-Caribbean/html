@@ -4,7 +4,7 @@
 ## General style rules
 * Use valid HTML where possible. Use tools such as the [W3C HTML validator](https://validator.w3.org/nu/) to test.
 * Use HTML according to its purpose. This is important for accessibility, reuse, and code efficiency reasons.
-* Separate structure from presentation from behavior. trictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.
+* Separate structure from presentation from behavior. Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.
 * Do not use entity references. There is no need to use entity references like `&mdash;`, `&rdquo;`, or `&#x263a;`, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
 
 ## General formatting
@@ -36,7 +36,8 @@ We often use certain HTML elements and CSS properties that require the use of th
 ```
 ## Language attribute
 From the HTML5 spec:
->Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
+> Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
+
 ```html
 <html lang="en-us">
   <!-- ... -->
@@ -132,7 +133,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 ## Tables
 Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. (Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
 
-```
+```html
 <table summary="This is a chart of invoices for 2011.">
   <thead>
     <tr>
